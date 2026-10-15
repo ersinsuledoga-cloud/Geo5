@@ -1,0 +1,6 @@
+{
+  "name": "GeoMacera: 5. Sınıf Doğrular ve Açılar",
+  "description": "MEB 5. sınıf matematik müfredatına uygun interaktif geometrik macera oyunu.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
