@@ -87,14 +87,14 @@ export default function App() {
         <div className="flex items-center gap-2">
           <button
             onClick={() => {
-              downloadSingleFileHtml();
+              downloadSingleFileHtml('index.html');
               sounds.playClick();
             }}
-            className="flex items-center gap-1.5 px-3.5 py-2 text-xs font-bold text-white bg-indigo-600 hover:bg-indigo-500 active:scale-95 rounded-xl shadow-md transition-all whitespace-nowrap cursor-pointer"
-            title="Tek dosya olarak bilgisayarına indirip internetsiz oyna"
+            className="flex items-center gap-1.5 px-4 py-2 text-xs font-bold text-white bg-indigo-600 hover:bg-indigo-500 active:scale-95 rounded-xl shadow-md transition-all whitespace-nowrap cursor-pointer"
+            title="Tek dosya index.html olarak bilgisayarına indirip internetsiz oyna"
           >
-            <Download className="w-3.5 h-3.5" />
-            <span>oyun.html İndir</span>
+            <Download className="w-4 h-4" />
+            <span>index.html İndir</span>
           </button>
 
           <button
@@ -110,6 +110,32 @@ export default function App() {
 
       {/* 2. Main Game Viewport */}
       <main className="flex-1 max-w-6xl w-full mx-auto p-4 sm:p-6 flex flex-col items-center">
+        {/* Quick Download & Offline Banner */}
+        <div className="w-full max-w-5xl mb-4 bg-gradient-to-r from-indigo-950/90 via-slate-900 to-indigo-950/90 border border-indigo-500/40 rounded-2xl p-3 sm:px-5 flex flex-wrap items-center justify-between gap-3 shadow-lg">
+          <div className="flex items-center gap-3">
+            <span className="text-2xl">💾</span>
+            <div>
+              <div className="text-xs font-bold text-indigo-300 flex items-center gap-1.5">
+                <span>Tek Dosya index.html İndir</span>
+                <span className="px-1.5 py-0.5 text-[10px] bg-emerald-950 text-emerald-400 border border-emerald-700 rounded-full">Çevrimdışı Çalışır</span>
+              </div>
+              <div className="text-[11px] text-slate-400">
+                Oyunu bilgisayarına <code className="text-amber-400 font-mono font-bold">index.html</code> olarak kaydet, internet olmadan çift tıklayarak hemen oyna!
+              </div>
+            </div>
+          </div>
+          <button
+            onClick={() => {
+              downloadSingleFileHtml('index.html');
+              sounds.playClick();
+            }}
+            className="flex items-center gap-2 px-4 py-2 text-xs font-black text-white bg-emerald-600 hover:bg-emerald-500 active:scale-95 rounded-xl shadow-md transition-all cursor-pointer whitespace-nowrap"
+          >
+            <Download className="w-4 h-4" />
+            <span>index.html İndir</span>
+          </button>
+        </div>
+
         {activeTab === 'maze' ? (
           <MazeGame />
         ) : (
@@ -126,10 +152,10 @@ export default function App() {
             <div className="flex items-center justify-between pb-3 border-b border-slate-800 mb-4">
               <div>
                 <h3 className="text-base font-bold text-white">
-                  Tek Dosya (oyun.html) Labirent Oyunu Kodu
+                  Tek Dosya (index.html) Labirent Oyunu Kodu
                 </h3>
                 <p className="text-xs text-slate-400">
-                  Bu kodu bilgisayarınıza "oyun.html" adıyla kaydedip direkt tarayıcıda çalıştırabilirsiniz.
+                  Bu kodu bilgisayarınıza "index.html" adıyla kaydedip direkt tarayıcıda çalıştırabilirsiniz.
                 </p>
               </div>
               <div className="flex items-center gap-2">

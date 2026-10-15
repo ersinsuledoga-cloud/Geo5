@@ -902,13 +902,13 @@ export function generateSingleFileHtml(): string {
 </html>`;
 }
 
-export function downloadSingleFileHtml() {
+export function downloadSingleFileHtml(fileName: string = 'index.html') {
   const html = generateSingleFileHtml();
   const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url;
-  a.download = 'oyun.html';
+  a.download = fileName;
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
